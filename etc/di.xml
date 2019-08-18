@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @author MageBild Team
+ * @copyright Copyright (c) 2019 Magebild
+ * @package Magebild_Console
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Magebild\Console\Api\AssignmentManagementInterface" type="Magebild\Console\Model\AssignmentManagement" />
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="MassAssign" xsi:type="object">Magebild\Console\Console\Command\MassAssign</item>
+			</argument>
+		</arguments>
+	</type>
+	<virtualType name="successlogger" type="Magento\Framework\Logger\Monolog">
+		<arguments>
+			<argument name="handlers"  xsi:type="array">
+				<item name="debug" xsi:type="object">Magebild\Console\Logger\Success</item>
+			</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magebild\Console\Model\AssignmentManagement">
+		<arguments>
+			<argument name="logger" xsi:type="object">successlogger</argument>
+		</arguments>
+	</type>
+</config>

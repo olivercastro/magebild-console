@@ -1,0 +1,22 @@
+{
+    "name": "magebild/module-console",
+    "description": "Magebild custom console utils",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "olivertamboboycastro@gmail.com",
+            "name": "Oliver Castro"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Magebild\\Console\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
